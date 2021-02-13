@@ -10,8 +10,8 @@ public class PLayerBehaviour : MonoBehaviour
     {
         
         //###################  HOW TO PRINT ROTATAIONS & RANDON NUMBERS ###########
-        Debug.LogFormat("Printing Euler Angles:{0}",transform.eulerAngles);// World Rotations
-        Debug.LogFormat("Printing Local Euler Angles:{0}", transform.localEulerAngles);// Local Rotations
+        Debug.LogFormat("Printing Euler Angles:{0}",transform.eulerAngles);// Returns World Rotations
+        Debug.LogFormat("Printing Local Euler Angles:{0}", transform.localEulerAngles);// Returns Local Rotations
 
         for (int i = 0; i < 10; i++)
         {   
