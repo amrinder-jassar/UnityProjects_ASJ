@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ExampleClass : MonoBehaviour
 {
+    //################### HOW TO USE RAYCAST #################
     void FixedUpdate()
     {
 
