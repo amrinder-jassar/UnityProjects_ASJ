@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class CylinderAmr01 : MonoBehaviour
 {
-    //########## Creating and filling in ARRAYS #############
-    public GameObject[] Towers;
+    List<string> Towers = new List<string>() { "tower1", "tower2", "tower3","towewr4"};
+
     private void Start()
     {
-        Towers = GameObject.FindGameObjectsWithTag("Tower");
-        for(int i=0; i<Towers.Length; i++)
+        
+        for (int i=0; i<Towers.Count;i++)
         {
-            Debug.Log("Tower no "+i+" has name"+Towers[i]);
-            Debug.LogFormat("Z");
+            //Debug.Log(Towers[i]);
         }
     }
 }
