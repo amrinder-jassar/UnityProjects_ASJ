@@ -8,7 +8,6 @@ public class BallController01 : MonoBehaviour
     float vInput;
     float hInput;
     public float moveSpeed;
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();

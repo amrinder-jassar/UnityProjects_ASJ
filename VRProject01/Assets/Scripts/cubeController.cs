@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class cubeController : MonoBehaviour
 {
-    
-    // Start is called before the first frame update
-    void Start()
+    public GameObject blastEffect;
+
+    private void OnCollisionEnter(Collision collision)
     {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-      
+        Destroy(gameObject);
+        Instantiate(blastEffect, this.transform.position, Quaternion.Euler(-90f,0f,0f));
     }
 }
