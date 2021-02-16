@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class CylinderAmr01 : MonoBehaviour
 {
-    List<string> Towers = new List<string>() { "tower1", "tower2", "tower3","towewr4"};
-
-    private void Start()
+    void FixedUpdate()
     {
-        
-        for (int i=0; i<Towers.Count;i++)
-        {
-            //Debug.Log(Towers[i]);
-        }
+        RaycastHit hit;
+        int layerMask = 0;
+        Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 100f, Color.yellow);
+        Debug.LogFormat("hit value is:{0}", hit.distance);
+
     }
 }
