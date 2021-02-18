@@ -6,18 +6,34 @@ public class gameController01 : MonoBehaviour
 {
     public GameObject cubeObject;
     public float depthSet ;
-    public float Score = 0;
+    private int score = 0;
+    public GameObject WinScreen;
+    public int Score
+    {
+        get
+        {
+            return score;
+        }
+        set
+        {
+            score = value;
+        }
+    }
     void Update()
     {
       
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && score < 10 )
         {
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = depthSet;
             Vector3 spawnPos = Camera.main.ScreenToWorldPoint(mousePos);  
             Instantiate(cubeObject, spawnPos,Quaternion.identity);
-            Score += 1;
-            Debug.LogFormat("Current Score is = {0}" ,Score);
+            //score += 1;// score also updates on cube fall in cubeControlller script 
+        }
+        else if (Input.GetMouseButtonDown(0) && score >= 10)
+        {
+            WinScreen.SetActive(true);
+            Time.timeScale = 0f;
         }
         
     }

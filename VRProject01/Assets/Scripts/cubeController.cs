@@ -11,5 +11,8 @@ public class cubeController : MonoBehaviour
         
         Destroy(gameObject);
         Instantiate(blastEffect, this.transform.position, Quaternion.Euler(-90f,0f,0f));
+        gameController01 updateScore = GameObject.Find("GameManager").GetComponent<gameController01>();
+        updateScore.Score += 1;
+        // above line is Updating score using setter from gameController01 script
     }
 }
