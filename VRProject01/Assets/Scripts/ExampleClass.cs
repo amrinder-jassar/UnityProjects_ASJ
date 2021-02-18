@@ -12,6 +12,6 @@ public class ExampleClass : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, mask);
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-        Debug.Log(hit.distance);
+        //Debug.Log(hit.distance);
     }
 }
