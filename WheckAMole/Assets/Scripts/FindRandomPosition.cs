@@ -8,21 +8,42 @@ public class FindRandomPosition : MonoBehaviour
     public List<int> indexCheck;
     public Vector3 InstantiatePosition;
     public GameObject Capsule;
+    
 
     private void Start()
-    {
+    {        
         InitializePopPositionsList();
     }
 
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            int index = CallRandomPosition(locations);
-
-            InstantiatePosition = locations[index].transform.position;
-            Instantiate(Capsule, InstantiatePosition,Quaternion.identity);
+            int index = Random.Range(0, 9);
+            for (int i=0;i<9;i++)
+            {
+                if (indexCheck.Count==0)
+                {
+                    indexCheck.Add(index);
+                    Debug.Log("Count ZERO");
+                }
+                else if (index == indexCheck[i])
+                {
+                    Debug.Log("Already Exist in LIST");
+                }
+                else if (index != indexCheck[i])
+                {
+                    indexCheck.Add(index);
+                    PrintList(indexCheck);
+                }
+            }
+            
         }
+                        
+            //InstantiatePosition = locations[index].transform.position;
+            //Instantiate(Capsule, InstantiatePosition,Quaternion.identity);
+        
         
     }
     //####################################################################
@@ -37,10 +58,14 @@ public class FindRandomPosition : MonoBehaviour
         }
         
     }
-    //##################################################################
-    public int CallRandomPosition(List<Transform>listName)
+
+    void PrintList(List<int>listName)
     {
-        int i = Random.Range(0, listName.Count);
-        return i;
-    }
+        Debug.Log("PRINTING LIST");
+        for (int index = 0; index < listName.Count;index++)
+        {
+            Debug.Log(listName[index]);
+        }
+    } 
+   
 }
