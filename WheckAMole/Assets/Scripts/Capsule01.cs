@@ -12,7 +12,7 @@ public class Capsule01 : MonoBehaviour
     void Update()
     {
         anim.SetTrigger("Active");
-        if (Input.GetMouseButtonDown(0)&& gameObject.tag == "bait")
+        if (Input.GetMouseButtonDown(0))
         {
             Destroy(gameObject);
         }

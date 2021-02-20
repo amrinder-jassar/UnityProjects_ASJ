@@ -6,6 +6,7 @@ public class FindRandomPosition : MonoBehaviour
 {
     public List <Transform> locations;
     public Vector3 newPosition;
+    public GameObject Capsule;
 
     private void Start()
     {
@@ -14,8 +15,14 @@ public class FindRandomPosition : MonoBehaviour
 
     void Update()
     {
-        int index = CallRandomPosition(locations);
-        Debug.Log(index);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            int index = CallRandomPosition(locations);
+            newPosition = locations[index].transform.position;
+            Debug.Log(newPosition);
+            Instantiate(Capsule, newPosition,Quaternion.identity);
+        }
+        
     }
 
 
