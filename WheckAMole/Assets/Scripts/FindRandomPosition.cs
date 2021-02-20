@@ -10,13 +10,13 @@ public class FindRandomPosition : MonoBehaviour
     {        
         InitializePopPositions();
     }
+    //####################################################################
     void InitializePopPositions()
     {
         Transform popPositions = GameObject.Find("PopPositions").transform;
         foreach (Transform child in popPositions)
         {
             locations.Add(child);
-            Debug.LogFormat("Child is holding :{0} in it.",child);
         }
         
     }
