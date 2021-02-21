@@ -622,7 +622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   locations: []
-  newPosition: {x: 0, y: 0, z: 0}
+  IndexCheck: 
+  InstantiatePosition: {x: 0, y: 0, z: 0}
   Capsule: {fileID: 7400608986011828485, guid: 0b30ed981c938814eb6b12bf62fe6780, type: 3}
 --- !u!1001 &6746351037292394102
 PrefabInstance:
@@ -637,7 +638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6746351037305619646, guid: 761515e7da1d05f499ba05451ac23593, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6746351037305619647, guid: 761515e7da1d05f499ba05451ac23593, type: 3}
       propertyPath: m_RootOrder
