@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class HoleBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject[] moles;
+
     void Start()
     {
-        
+        Invoke("Spawn",Random.Range(3f,7f)); //Invoke Calls a method after specific amount of time.
     }
-
-    // Update is called once per frame
-    void Update()
+    void Spawn()
     {
-        
+        int num = Random.Range(0,moles.Length);
+        GameObject mole = Instantiate(moles[num],transform.position, Quaternion.identity) as GameObject;
+        Invoke("Spawn",Random.Range(3f,7f));
     }
 }
