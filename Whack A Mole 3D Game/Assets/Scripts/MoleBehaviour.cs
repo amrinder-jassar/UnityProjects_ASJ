@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyMe : MonoBehaviour
+public class MoleBehaviour : MonoBehaviour
 {
     Collider col;
 
@@ -18,6 +18,6 @@ public class DestroyMe : MonoBehaviour
     public void SwitchCollider(int num)
     {
         col.enabled = (num == 0) ? false : true;
-        //Any other no except for 0 is going to return true, but 0 is going to return false.
+        //Any other no except for 0 is going to reyturn true, but 0 is return false.
     }
 }
