@@ -5,9 +5,11 @@ using UnityEngine;
 public class MoleBehaviour : MonoBehaviour
 {
     Collider col;
+    [HideInInspector] public Animator anim;
 
-    private void Start()
+    void Start()
     {
+        anim = GetComponent<Animator>();
         col = GetComponent<Collider>();
         col.enabled = false;
     }
@@ -18,6 +20,11 @@ public class MoleBehaviour : MonoBehaviour
     public void SwitchCollider(int num)
     {
         col.enabled = (num == 0) ? false : true;
-        //Any other no except for 0 is going to reyturn true, but 0 is return false.
+        //Any other number except for 0 is going to return true, but 0 is returning false.
+    }
+    //FOR POINTS LATER
+    public void GotHit()
+    {
+        Destroy(gameObject);
     }
 }
