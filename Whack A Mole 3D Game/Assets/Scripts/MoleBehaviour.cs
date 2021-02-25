@@ -6,6 +6,7 @@ public class MoleBehaviour : MonoBehaviour
 {
     Collider col;
     public int hitPoints = 1;
+    [HideInInspector] public GameObject myParent;
     [HideInInspector] public Animator anim;
 
     void Start()
@@ -16,6 +17,7 @@ public class MoleBehaviour : MonoBehaviour
     }
     public void DestroyObj()
     {
+        myParent.GetComponent<HoleBehaviour>().hasMole = false;
         Destroy(gameObject);
     }
     public void SwitchCollider(int num)
@@ -33,6 +35,7 @@ public class MoleBehaviour : MonoBehaviour
         }
         else
         {
+            myParent.GetComponent<HoleBehaviour>().hasMole = false;
             Destroy(gameObject);
         }
         
