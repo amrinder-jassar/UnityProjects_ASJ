@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoleBehaviour : MonoBehaviour
 {
     Collider col;
+    public int hitPoints = 1;
     [HideInInspector] public Animator anim;
 
     void Start()
@@ -25,6 +26,7 @@ public class MoleBehaviour : MonoBehaviour
     //FOR POINTS LATER
     public void GotHit()
     {
+        hitPoints--;
         Destroy(gameObject);
     }
 }
