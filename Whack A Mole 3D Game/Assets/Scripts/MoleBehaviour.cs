@@ -27,6 +27,14 @@ public class MoleBehaviour : MonoBehaviour
     public void GotHit()
     {
         hitPoints--;
-        Destroy(gameObject);
+        if (hitPoints>0)
+        {
+            col.enabled = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }
