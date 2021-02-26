@@ -578,6 +578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 2
+  score: 3
+  myParent: {fileID: 0}
   anim: {fileID: 0}
 --- !u!136 &1753846073962753814
 CapsuleCollider:

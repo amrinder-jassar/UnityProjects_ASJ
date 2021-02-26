@@ -759,6 +759,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e2891f459c9e14aad862f6d9274d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitPoints: 1
+  score: 1
+  myParent: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!136 &5349004195798837589
 CapsuleCollider:
   m_ObjectHideFlags: 0

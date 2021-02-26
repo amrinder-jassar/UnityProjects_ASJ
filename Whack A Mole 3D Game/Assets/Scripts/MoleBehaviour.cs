@@ -6,6 +6,7 @@ public class MoleBehaviour : MonoBehaviour
 {
     Collider col;
     public int hitPoints = 1;
+    public int score =1 ;
     [HideInInspector] public GameObject myParent;
     [HideInInspector] public Animator anim;
 
@@ -26,6 +27,7 @@ public class MoleBehaviour : MonoBehaviour
         //Any other number except for 0 is going to return true, but 0 is returning false.
     }
     
+    //FOR POINTS
     public void GotHit()
     {
         hitPoints--;
@@ -36,6 +38,7 @@ public class MoleBehaviour : MonoBehaviour
         else
         {
             myParent.GetComponent<HoleBehaviour>().hasMole = false;
+            ScoreManager.AddScore(score);
             Destroy(gameObject);
         }
         
