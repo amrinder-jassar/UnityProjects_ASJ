@@ -10,9 +10,10 @@ public class ScoreManager : MonoBehaviour
     {
         score += amount;
         Debug.Log("Current Score:" + score);
+        UIManager.instance.UpdateUI();
     }
 
-    public int ReadScore()
+    public static int ReadScore()
     {
         return score;
     }
