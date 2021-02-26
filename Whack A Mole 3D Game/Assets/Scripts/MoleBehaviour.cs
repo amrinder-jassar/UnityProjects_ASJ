@@ -25,7 +25,7 @@ public class MoleBehaviour : MonoBehaviour
         col.enabled = (num == 0) ? false : true;
         //Any other number except for 0 is going to return true, but 0 is returning false.
     }
-    //FOR POINTS LATER
+    
     public void GotHit()
     {
         hitPoints--;
