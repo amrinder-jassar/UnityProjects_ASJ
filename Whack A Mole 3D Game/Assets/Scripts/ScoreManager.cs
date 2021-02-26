@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
     public static void AddScore(int amount)
     {
         score += amount;
-        Debug.Log("Current Score:" + score);
+        //Debug.Log("Current Score:" + score);
         UIManager.instance.UpdateUI();
     }
 
