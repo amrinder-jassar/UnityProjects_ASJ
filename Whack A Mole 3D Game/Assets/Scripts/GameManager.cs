@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    int playtime = 60;
+    int playtime = 10;
     int seconds, minutes;
-    private void Awake()
-    {
-        StartCoroutine("PlayTimer");//passing name of PlayTimer Function
-    }
+    int curLevel = 1;
+    int baseScore = 100;
+    int scoreToReach;
 
     void Start()
     {
-        StartCoroutine("PlayTimer");//passing name of PlayTimer Function
-        
+        scoreToReach = curLevel * baseScore;
+        StartCoroutine("PlayTimer");
     }
 
-    // IEnumerable is Time Based Function and going to return something
-    IEnumerable PlayTimer()
+    // IEnumerator is Time Based Function and going to return something
+    IEnumerator PlayTimer()
     {
+        
         while (playtime > 0)
         {
             yield return new WaitForSeconds(1);
@@ -32,5 +32,19 @@ public class GameManager : MonoBehaviour
         }
         Debug.Log("TIMER ENDED");
         // WIN Condition
+        CheckForWin();
+    }
+
+    void CheckForWin()
+    {
+        if (ScoreManager.ReadScore() >= scoreToReach)
+        {
+            Debug.Log("You WON the level");
+        }
+        else
+        {
+            //GameOver
+            Debug.Log("GAME OVER");
+        }
     }
 }
