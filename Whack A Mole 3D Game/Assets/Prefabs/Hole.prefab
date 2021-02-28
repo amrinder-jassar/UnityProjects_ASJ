@@ -114,3 +114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0113f9d2c34067741a4fdbe9e8768228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moles:
+  - {fileID: 6663495231675095239, guid: 4597eea9ed09e364795f179fcbb91da2, type: 3}
+  - {fileID: 3573863678517420045, guid: 83c54ed86e558c64d9751ec7614d39cc, type: 3}
+  - {fileID: 3202280763956163428, guid: 3b6eff608bbaba04287526789c96a64c, type: 3}
+  - {fileID: 8524123075293439696, guid: 118bf8c90d02068469d707fabad37766, type: 3}
+  - {fileID: 7089379389763933022, guid: 9e83ac74c304d2748ba1fb35e89ef6f8, type: 3}
+  hasMole: 0

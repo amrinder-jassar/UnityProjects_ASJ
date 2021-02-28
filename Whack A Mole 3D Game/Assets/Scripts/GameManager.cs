@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     int seconds, minutes;
 
     //LEVEL & SCORE
-    static int curLevel = 1;
+    public static int curLevel = 1;
     int baseScore = 10;
     int scoreToReach;
 
