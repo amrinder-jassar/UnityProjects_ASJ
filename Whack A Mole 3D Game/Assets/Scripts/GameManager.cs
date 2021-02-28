@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //TIMER
-    int playtime = 10;
+    int playtime = 30;
     int seconds, minutes;
 
     //LEVEL & SCORE
     static int curLevel = 1;
-    int baseScore = 100;
+    int baseScore = 10;
     int scoreToReach;
 
     void Start()
