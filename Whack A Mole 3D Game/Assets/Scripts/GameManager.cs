@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //TIMER
     int playtime = 10;
     int seconds, minutes;
-    int curLevel = 1;
+
+    //LEVEL & SCORE
+    static int curLevel = 1;
     int baseScore = 10;
     int scoreToReach;
 
