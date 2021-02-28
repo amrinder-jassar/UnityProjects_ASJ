@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,12 +11,12 @@ public class GameManager : MonoBehaviour
 
     //LEVEL & SCORE
     static int curLevel = 1;
-    int baseScore = 10;
+    int baseScore = 100;
     int scoreToReach;
 
     void Start()
     {
-        scoreToReach = curLevel * baseScore;
+        scoreToReach = curLevel * baseScore * curLevel;
         ScoreManager.scoreToReach = scoreToReach;
         UIManager.instance.UpdateUI(0,scoreToReach);
         StartCoroutine("PlayTimer");
@@ -45,6 +46,8 @@ public class GameManager : MonoBehaviour
         if (ScoreManager.ReadScore() >= scoreToReach)
         {
             Debug.Log("You WON the level");
+            curLevel++;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else
         {
