@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        UpdateUI();
         UpdateTime(1,0);
     }
 
@@ -20,8 +19,8 @@ public class UIManager : MonoBehaviour
     {
         timeText.text = mins.ToString("D2") + ":" + secs.ToString("D2");
     }
-    public void UpdateUI()
+    public void UpdateUI(int score, int scoreToReach)
     {
-        scoreText.text = "Score: "+ ScoreManager.ReadScore();
+        scoreText.text = "Score: "+ score + "/" + scoreToReach;
     }
 }

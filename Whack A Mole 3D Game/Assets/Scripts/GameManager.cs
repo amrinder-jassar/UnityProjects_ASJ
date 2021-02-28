@@ -7,12 +7,14 @@ public class GameManager : MonoBehaviour
     int playtime = 10;
     int seconds, minutes;
     int curLevel = 1;
-    int baseScore = 100;
+    int baseScore = 10;
     int scoreToReach;
 
     void Start()
     {
         scoreToReach = curLevel * baseScore;
+        ScoreManager.scoreToReach = scoreToReach;
+        UIManager.instance.UpdateUI(0,scoreToReach);
         StartCoroutine("PlayTimer");
     }
 
