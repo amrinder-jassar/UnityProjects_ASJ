@@ -5,21 +5,37 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     //TIMER
-    int playtime = 30;
+    int playtime = 10;
     int seconds, minutes;
 
     //LEVEL & SCORE
     public static int curLevel = 1;
-    int baseScore = 10;
+    int baseScore = 100;
     int scoreToReach;
+
+    static bool hasLost;
+
+    [HideInInspector] public bool countDownDone;
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
+        if (hasLost)
+        {
+            hasLost = false;
+            ScoreManager.ResetScore();
+            curLevel = 1;
+        }
         scoreToReach = curLevel * baseScore * curLevel;
         ScoreManager.scoreToReach = scoreToReach;
-        UIManager.instance.UpdateUI(0,scoreToReach);
-        StartCoroutine("PlayTimer");
+        UIManager.instance.UpdateUI(ScoreManager.ReadScore(),scoreToReach);
+        //StartCoroutine("PlayTimer");
     }
 
     // IEnumerator is Time Based Function and going to return something
@@ -51,8 +67,12 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            hasLost = true;
+            ScoreHolder.score = ScoreManager.ReadScore();
+            ScoreHolder.level = curLevel;
+            SceneManager.LoadScene("GameOver");
             //GameOver
-            Debug.Log("GAME OVER");
+            //Debug.Log("GAME OVER");
         }
     }
 }

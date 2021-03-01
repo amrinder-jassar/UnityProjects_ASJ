@@ -1046,6 +1046,7 @@ MonoBehaviour:
   score: 10
   myParent: {fileID: 0}
   anim: {fileID: 0}
+  popupText: {fileID: 3929749016947691801, guid: 2cd4bb571cb158e4aacbeda3d31c90ca, type: 3}
 --- !u!136 &6883126841715173835
 CapsuleCollider:
   m_ObjectHideFlags: 0

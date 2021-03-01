@@ -16,7 +16,7 @@ public class HoleBehaviour : MonoBehaviour
     }
     void Spawn()
     {
-        if (!hasMole)
+        if (!hasMole && GameManager.instance.countDownDone)
         {
             //int num = Random.Range(0, moles.Length);
             int num = CalculateRarity();
