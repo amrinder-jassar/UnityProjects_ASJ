@@ -46,13 +46,13 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             playtime--;
-            Debug.Log("PLaytime is :"+ playtime);
+            //Debug.Log("PLaytime is :"+ playtime);
             seconds = playtime % 60;
             minutes = playtime / 60 % 60;
             //Update UI
             UIManager.instance.UpdateTime(minutes,seconds);
         }
-        Debug.Log("TIMER ENDED");
+        //Debug.Log("TIMER ENDED");
         // WIN Condition
         CheckForWin();
     }
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     {
         if (ScoreManager.ReadScore() >= scoreToReach)
         {
-            Debug.Log("You WON the level");
+            //Debug.Log("You WON the level");
             curLevel++;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
