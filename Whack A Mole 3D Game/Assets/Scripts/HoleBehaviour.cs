@@ -11,7 +11,8 @@ public class HoleBehaviour : MonoBehaviour
     {
         if (!hasMole)
         {
-            Invoke("Spawn", Random.Range(0f, 7f)); //Invoke Calls a method after specific amount of time.
+            //Invoke Calls a method after specific amount of time.
+            Invoke("Spawn", Random.Range(0f, 7f));             
         }
     }
     void Spawn()
@@ -30,7 +31,6 @@ public class HoleBehaviour : MonoBehaviour
         }
         Invoke("Spawn", Random.Range(0f, 7f));
     }
-
     int CalculateRarity()
     {
         int num = Random.Range(0, 101);

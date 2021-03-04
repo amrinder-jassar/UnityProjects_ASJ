@@ -15,6 +15,8 @@ public class InputManager : MonoBehaviour
                 if (hit.collider.tag == "Mole")
                 {
                     MoleBehaviour mole = hit.collider.gameObject.GetComponent<MoleBehaviour>();
+
+
                     mole.SwitchCollider(0);// Disable collider
                     mole.anim.SetTrigger("hit");
                     //Debug.Log(hit.collider.gameObject + "got hit");
