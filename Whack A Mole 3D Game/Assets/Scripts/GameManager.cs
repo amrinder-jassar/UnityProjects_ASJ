@@ -6,24 +6,17 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    //TIMER
-    int playtime = 10;
+    int playtime = 10;//TIMER
     int seconds, minutes;
-
-    //LEVEL & SCORE
-    public static int curLevel = 1;
+    public static int curLevel = 1;//LEVEL & SCORE
     int baseScore = 100;
     int scoreToReach;
-
     static bool hasLost;
-
     [HideInInspector] public bool countDownDone;
-
     void Awake()
     {
         instance = this;
     }
-
     void Start()
     {
         if (hasLost)
@@ -35,28 +28,19 @@ public class GameManager : MonoBehaviour
         scoreToReach = curLevel * baseScore * curLevel;
         ScoreManager.scoreToReach = scoreToReach;
         UIManager.instance.UpdateUI(ScoreManager.ReadScore(),scoreToReach);
-        //StartCoroutine("PlayTimer");
     }
-
-    // IEnumerator is Time Based Function and going to return something
-    IEnumerator PlayTimer()
+    IEnumerator PlayTimer()// IEnumerator is Time Based Function & return something
     {
-        
         while (playtime > 0)
         {
             yield return new WaitForSeconds(1);
             playtime--;
-            //Debug.Log("PLaytime is :"+ playtime);
             seconds = playtime % 60;
             minutes = playtime / 60 % 60;
-            //Update UI
-            UIManager.instance.UpdateTime(minutes,seconds);
+            UIManager.instance.UpdateTime(minutes,seconds);//Update UI
         }
-        //Debug.Log("TIMER ENDED");
-        // WIN Condition
-        CheckForWin();
+        CheckForWin();// WIN Condition
     }
-
     void CheckForWin()
     {
         if (ScoreManager.ReadScore() >= scoreToReach)
@@ -71,8 +55,6 @@ public class GameManager : MonoBehaviour
             ScoreHolder.score = ScoreManager.ReadScore();
             ScoreHolder.level = curLevel;
             SceneManager.LoadScene("GameOver");
-            //GameOver
-            //Debug.Log("GAME OVER");
         }
     }
 }
