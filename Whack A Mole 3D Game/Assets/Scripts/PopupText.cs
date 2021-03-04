@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PopupText : MonoBehaviour
 {
-    public Text popupText;
+    public Text popupText;// To ADD +1 with Animation at HIT
     Animator anim;
     // Start is called before the first frame update
     void Start()
