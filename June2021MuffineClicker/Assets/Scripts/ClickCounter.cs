@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class ClickCounter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int counter;
+    public void OnButtonClicked()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        counter = counter + 1;
+        Debug.Log(counter);
     }
 }
